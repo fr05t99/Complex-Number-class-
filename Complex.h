@@ -1,7 +1,6 @@
 #ifndef COMPLEX_H
 #define COMPLEX_H
-#include<ostream>
-#include<istream>
+#include<iostream>
 
 class Complex
 {
@@ -11,8 +10,10 @@ class Complex
         Complex(int, int);
         void setImaginary(int);
         void setReal(int);
-        friend std::ostream & operator<<(std::ostream &, Complex&);
-        friend std::istream & operator<<(std::istream &, Complex&);
+        Complex operator + (Complex &c);
+        Complex operator - (Complex &c);
+        friend std::ostream & operator<<(std::ostream &os, Complex &c);
+        friend std::istream & operator>>(std::istream &is, Complex &c);
     protected:
 
     private:
